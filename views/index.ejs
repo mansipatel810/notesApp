@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+<nav class=" p-4">
+    <ul class="flex justify-between">
+        <li class="mr-6"><a href="/app-notes" class=" hover:text-blue-800 text-3xl font-bold">App Notes</a></li>
+        
+        <li class="ml-auto mr-6"><a href="/" class=" hover:text-blue-300 text-xl font-bold ">Home</a></li>
+        <li class="mr-6"><a href="/new-notes" class=" hover:text-blue-300 text-xl font-bold">New Notes</a></li>
+        <li class="mr-6"><a href="/all-notes" class=" hover:text-blue-300 text-xl font-bold">All Notes</a></li>
+    </ul>
+</nav>
+
+<head><h2 class="text-3xl  font-bold mt-20 ml-20">Files</h2></head>
+<div class="container  mx-auto p-4 mt-20 flex flex-wrap">
+    <% files.forEach(function(file){ %>
+        <div class= "w-full md:w-1/2 xl:w-1/3 p-4  ">
+            <div class="bg-white rounded shadow-xl p-4">
+                <h3 class="text-xl font-bold mb-2"><%= file.name %> </h3>
+                <div class="flex justify-between">
+                    <a href="/note/<%= file.name %>" class="text-blue-500 hover:text-blue-800">View Note</a>
+                    <a href="/edit/<%= file.name%>" class="text-green-700">Edit</a>
+                    <a href="/delete/<%= file.name%>" class="text-red-800 ">Delete</a>
+                    
+                </div>
+            </div>
+
+        </div>
+    <% }) %>
+</div>
+</body>
+</html>
